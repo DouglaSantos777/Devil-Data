@@ -1,7 +1,11 @@
 from django.urls import path
-from .views import CharList, CharDetail
+from .views import  CharListCreate,  CharRetrieveUpdateDestroy
 
 urlpatterns = [
-    path('chars/', CharList.as_view(), name='char-list'),
-    path('chars/<int:pk>/', CharDetail.as_view(), name='char-detail'),
+    path('chars/',  CharListCreate.as_view(), name='char-view-create'),
+    path(
+        'chars/<int:pk>/',
+          CharRetrieveUpdateDestroy.as_view(), 
+          name='update'
+          ),
 ]
