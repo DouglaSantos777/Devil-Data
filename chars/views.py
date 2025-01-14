@@ -40,6 +40,10 @@ class CharDetail(APIView):
         except Char.DoesNotExist:
             return Response(status=status.HTTP_404_NOT_FOUND)
 
-
-def chars_list(request):
-    return render(request, "chars_list.html")
+    def delete(self, request, pk):
+        try:
+            char = Char.objects.get(pk=pk)
+            char.delete()
+            return Response(status=status.HTTP_204_NO_CONTENT)
+        except Char.DoesNotExist:
+            return Response(status=status.HTTP_404_NOT_FOUND)
