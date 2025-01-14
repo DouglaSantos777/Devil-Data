@@ -1,0 +1,15 @@
+# Excluir a pasta .venv
+.venv/
+
+# Excluir o arquivo .env
+.env
+
+# Opções adicionais
+*.pyc
+__pycache__/
+db.sqlite3
+media/
+
+# Excluir a pasta do VS Code
+.vscode/
+
